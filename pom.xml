@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>com.redhat.consulting.jdg</groupId>
+   <artifactId>rolling-upgrade-parent-multi-hotrod</artifactId>
+   <version>0.0.1-SNAPSHOT</version>
+   <packaging>pom</packaging>
+
+   <properties>
+      <maven.compiler.source>1.8</maven.compiler.source>
+      <maven.compiler.target>1.8</maven.compiler.target>
+   </properties>
+
+   <modules>
+      <module>application-source-one</module>
+       <module>application-source-two</module>
+      <module>application-destination-one</module>
+      <module>application-destination-two</module>
+   </modules>
+ 
+   <repositories>
+      <repository>
+         <id>jboss-community</id>
+         <url>https://repository.jboss.org/nexus/content/repositories/public/</url>
+         <snapshots>
+            <enabled>true</enabled>
+         </snapshots>
+      </repository>
+   </repositories>
+ 
+   <dependencyManagement>
+      <dependencies>
+         <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.13.3</version>
+         </dependency>
+         <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.0</version>
+         </dependency>
+      </dependencies>
+   </dependencyManagement>
+
+</project>
